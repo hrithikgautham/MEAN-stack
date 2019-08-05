@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>FORM</h1>
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+        <input type="text" placeholder="Employee Name" formControlName="name"/>
+        <input type="text" placeholder="Employee Position" formControlName="position"/>
+        <input type="text" placeholder="Employee Office" formControlName="office"/>
+        <input type="text" placeholder="Employee Salary" formControlName="salary"/>
+        <input type="submit" value="Submit"/>
+    </form>
+</div>

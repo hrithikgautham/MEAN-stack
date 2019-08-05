@@ -1,0 +1,22 @@
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>_id</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees" (click)="updateEmployee(employee)">
+                <th>{{ employee._id }}</th>
+                <th>{{ employee.name }}</th>
+                <th>{{ employee.position }}</th>
+                <th>{{ employee.office }}</th>
+                <th>{{ employee.salary }}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>

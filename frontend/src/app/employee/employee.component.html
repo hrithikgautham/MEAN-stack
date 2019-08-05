@@ -1,0 +1,9 @@
+<div>
+    <app-left 
+        [employee]="employee" 
+        [isUpdate]="getIsUpdate()" 
+        (setEmployee)="setEmployee($event)" 
+        (updateEmployee)="updateEmployee($event)">
+    </app-left>
+    <app-right [employees]="employees" (update)="setUpdate($event)"></app-right>
+</div>

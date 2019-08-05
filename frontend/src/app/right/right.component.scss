@@ -1,0 +1,41 @@
+.container {
+    // width: 60vw;
+    box-sizing: border-box;
+    padding: 1rem;
+    table {
+        width: 58vw;
+        // display: block;
+        color: #0352fc;
+        border: 1px solid #0352fc;
+        border-collapse: collapse;
+        border-radius: 10px;
+        tr {
+            // display: block;
+            // width: 100%;
+            &:first-child {
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+            &:last-child {
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #0352fc;
+        }
+        thead {
+            margin: 5px;
+        }
+        tbody {
+            tr {
+                cursor: pointer;
+                &:hover {
+                    background: #0352fc;
+                    color: white;
+                }
+            }
+        }
+    }
+}

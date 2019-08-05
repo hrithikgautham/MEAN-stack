@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
 const express = require('express');
+const cors = require('cors');
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 //connect to mongoDB
 const pwd = 'mean';
-mongoose.connect(`mongodb+srv://hrithik:${pwd}@cluster0-4lblr.mongodb.net/test?retryWrites=true&w=majority`, {
+mongoose.connect(`mongodb+srv://hrithik:${pwd}@cluster0-ehhss.mongodb.net/test?retryWrites=true&w=majority`, {
     useNewUrlParser: true
 });
 //create connection instance

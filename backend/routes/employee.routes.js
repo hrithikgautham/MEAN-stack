@@ -2,10 +2,33 @@ const express = require('express');
 const Router = express.Router();
 const { Employee } = require('../schemas/schema');
 
-Router.get('/', (req, res) => {
+Router.route('/')
+.get((req, res) => {
     Employee.find()
-    .then(employees => res.json(employees))
+    .then(employees => {
+        // const n = employees.length;
+        let newEmployees = [];
+        employees.forEach(employee => {
+            newEmployees.push({
+                _id: employee._id,
+                name: employee.name,
+                position: employee.position,
+                office: employee.office,
+                salary: employee.salary
+            });
+        })
+        console.log("new Employees: ", newEmployees);
+        res.json(newEmployees);
+    })
     .catch(err => res.status(400).json('Error: ' + err));
+})
+.options((req, res) => {
+    console.log("option request!");
+    console.log("req.headers: ", req.headers);
+    res.set('Access-Control-Allow-Origin', req.headers.origin);
+    res.set('Access-Control-Allow-Method', 'GET, POST, OPTIONS');
+    res.set('Access-Control-Max-Age', '86400');
+    res.send();
 });
     
 Router.post('/add', (req, res) => {

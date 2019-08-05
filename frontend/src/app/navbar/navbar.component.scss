@@ -1,0 +1,29 @@
+header {
+    font-family: arial;
+    display: flex;
+    justify-content: space-between;
+    background: #0352fc;
+    padding: 1rem;
+    h1 {
+        color: white;
+        text-align: center;
+        line-height: 50px;
+        margin-left: 5%;
+    }
+    ul {
+        display: flex;
+        width: 30vw;
+        justify-content: space-between;
+        li {
+            cursor: pointer;
+            list-style-type: none;
+            color: #fff;
+            padding: 1rem;
+            // margin-right: 10%;
+            &:hover {
+                transition: 0.3s;
+                background: lighten(#0352fc, 7%);
+            }
+        }
+    }
+}
